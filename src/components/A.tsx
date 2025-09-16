@@ -1,8 +1,7 @@
 import { useContextApi } from "../hooks/useContextApi"
+import { type ReactElement } from "react"
 
-
-function A() {
-
+function A(): ReactElement {
     const { state, dispatch } = useContextApi()
 
     return (

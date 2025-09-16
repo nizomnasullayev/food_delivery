@@ -1,29 +1,25 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import { client } from "../utils"
+import { type Post, type UsePostReturn } from "../types"
 
+function usePost(selectedUser: number = 0): UsePostReturn {
+    const [posts, setPosts] = useState<Post[]>([])
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
-function usePost(selectedUser: number = 0) {
-
-    const [posts, setPosts] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
-
-    
-
-    useEffect(() => {
-        getPosts()
-    }, [selectedUser])
-
-    const getPosts = () => {
+    const getPosts = useCallback((): void => {
         setIsLoading(true)
-        const url = selectedUser == 0 ? "/posts" : `/posts?userId=${selectedUser}`;
+        const url = selectedUser === 0 ? "/posts" : `/posts?userId=${selectedUser}`;
         console.log(url);
         client.get(url).then(res => {
             setPosts(res.data)
         }).finally(() => {
             setIsLoading(false)
         })
-    }
+    }, [selectedUser])
 
+    useEffect(() => {
+        getPosts()
+    }, [getPosts])
 
     return { posts, isLoading }
 }

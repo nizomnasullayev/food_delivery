@@ -1,33 +1,32 @@
-import { createContext, useReducer } from "react"
-export const MyContext = createContext({});
+import { useReducer, type ReactNode } from "react"
+import { type AppState, type Action } from "../types"
+import { MyContext } from "../context/AppContext"
 
-
-function Reducer(state, action) {
+function Reducer(state: AppState, action: Action): AppState {
     switch (action.type) {
         case "INCREMENT":
-            state = {...state, count: state.count + action.payload }
-            break;
+            return {...state, count: state.count + action.payload };
         case "SET_NAME":
-            state = {...state, user: { ...state.user, name: "Nizom" } }
-            break;
+            return {...state, user: { ...state.user, name: "Nizom" } };
+        default:
+            return state;
     }    
-    return state;
 }
 
-function MyContextApi(props: { children: React.ReactNode }) {
+interface MyContextApiProps {
+    children: ReactNode;
+}
 
-
+function MyContextApi({ children }: MyContextApiProps) {
     const [state, dispatch] = useReducer(Reducer, {
         count: 0,
         user: { name: "Hasan", age: 20 },
         theme: "dark"
     })
 
-
-
     return (
         <MyContext.Provider value={{ state, dispatch }} >
-            {props.children}
+            {children}
         </MyContext.Provider>
     )
 }

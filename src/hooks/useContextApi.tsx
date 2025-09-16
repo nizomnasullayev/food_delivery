@@ -1,12 +1,13 @@
 import { useContext } from "react";
-import { MyContext } from "./MyContextApi";
+import { MyContext } from "../context/AppContext";
+import { type ContextValue } from "../types";
 
-
-export function useContextApi() {
-    if (!MyContext) {
+export function useContextApi(): ContextValue {
+    const context = useContext(MyContext);
+    if (!context) {
         throw new Error("useContextApi must be used within a MyContext.Provider");
     }
-    return useContext(MyContext);
+    return context;
 }
 
 

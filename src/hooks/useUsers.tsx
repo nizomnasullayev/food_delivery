@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react"
 import { client } from "../utils"
+import { type User, type UseUsersReturn } from "../types"
 
-
-function useUsers() {
-
-    const [users, setUsers] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
+function useUsers(): UseUsersReturn {
+    const [users, setUsers] = useState<User[]>([])
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
     useEffect(() => {
         getUsers()
     }, [])
 
-    const getUsers = () => {
+    const getUsers = (): void => {
         setIsLoading(true)
         client.get("/users").then(res => {
             setUsers(res.data)
@@ -19,7 +18,6 @@ function useUsers() {
             setIsLoading(false)
         })
     }
-
 
     return { users, isLoading }
 }
