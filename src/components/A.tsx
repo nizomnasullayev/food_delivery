@@ -1,16 +1,17 @@
-import { useContextApi } from '../hooks/useContextApi'
-import B from './B'
+import { useContextApi } from "../hooks/useContextApi"
+
 
 function A() {
 
-    const {count} =  useContextApi()
-
+    const { state, dispatch } = useContextApi()
 
     return (
         <div>
-            A
+            <h1>{state.count}</h1>
+            <button onClick={() => dispatch({ type: "INCREMENT", payload: 10 })} >increment</button>
             <hr />
-            <B />
+            <h1>{state.user.name}</h1>
+            <button onClick={() => dispatch({ type: "SET_NAME" })} >change username</button>
         </div>
     )
 }

@@ -1,15 +1,32 @@
-import { createContext, use, useState } from "react"
+import { createContext, useReducer } from "react"
 export const MyContext = createContext({});
+
+
+function Reducer(state, action) {
+    switch (action.type) {
+        case "INCREMENT":
+            state = {...state, count: state.count + action.payload }
+            break;
+        case "SET_NAME":
+            state = {...state, user: { ...state.user, name: "Nizom" } }
+            break;
+    }    
+    return state;
+}
 
 function MyContextApi(props: { children: React.ReactNode }) {
 
 
-    const [count, setCount] = useState(0)
-    const [count2, setCount2] = useState(0)
-    const [arr, setArr] = useState([1,2,3,4])
+    const [state, dispatch] = useReducer(Reducer, {
+        count: 0,
+        user: { name: "Hasan", age: 20 },
+        theme: "dark"
+    })
+
+
 
     return (
-        <MyContext.Provider value={{ count, setCount, count2, arr }} >
+        <MyContext.Provider value={{ state, dispatch }} >
             {props.children}
         </MyContext.Provider>
     )
