@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -20,6 +19,8 @@ function SelectBox({ users, selectedUser, setSelectedUser }: any) {
                     label="Users"
                     onChange={(e) => setSelectedUser(e.target.value)}
                 >
+                    <MenuItem value={0}>All</MenuItem>
+
                     {
                         users.map((user: any) => (
                             <MenuItem key={user.id} value={user.id}>{user.name}</MenuItem>

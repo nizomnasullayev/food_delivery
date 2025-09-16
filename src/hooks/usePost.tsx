@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { client } from "../utils"
 
 
-function usePost(selectedUser: number) {
+function usePost(selectedUser: number = 0) {
 
     const [posts, setPosts] = useState([])
     const [isLoading, setIsLoading] = useState(false)
