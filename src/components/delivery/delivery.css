@@ -1,0 +1,20 @@
+.delivery{
+    padding: 60px 0;
+}
+.delivery .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.delivery-text-side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.delivery-text-side h1{
+    font-size: 60px;
+}
+.delivery-text-side p{
+    font-size: 16px;
+}

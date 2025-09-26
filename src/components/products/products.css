@@ -1,0 +1,145 @@
+.products{
+    background: #F7F7F7;
+    padding: 100px 0;
+    position: relative;
+}
+
+.product-category{
+    position: absolute;
+    top: -130px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 970px;
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 71px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 99;
+    background: #fff;
+    padding: 26px;
+}
+
+.products .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.products .wrapper .products-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.products .wrapper .products-in .product {
+    position: relative;
+    width: 250px;
+    height: 400px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Shared styles */
+.product-default,
+.product-hover {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s;
+}
+
+/* Default card */
+.product-default {
+    opacity: 1;
+    z-index: 2;
+    justify-content: flex-start;
+}
+
+.product-default img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-default p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Hover card */
+.product-hover {
+    background: #fff;
+    opacity: 0;
+    z-index: 1;
+    justify-content: flex-start;
+    transform: translateY(20px);
+    /* slide effect */
+}
+
+.product:hover .product-default {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.product:hover .product-hover {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 3;
+}
+
+.product-hover img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.product-hover h3 {
+    margin: 15px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.product-hover button {
+    background: #FCE8EC;
+    color: #EA5A78;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.product-hover button:hover {
+    background: rgba(226, 26, 67, 1);
+    color: #fff;
+}
+
+/* Rotated text */
+.product-text {
+    position: absolute;
+    top: 50%;
+    right: -30%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left top;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff3b6a;
+    z-index: 5;
+}

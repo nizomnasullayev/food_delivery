@@ -1,14 +1,16 @@
-import A from "./components/A"
-import MyContextApi from "./hooks/MyContextApi"
-import { type ReactElement } from "react"
+import { Route, Routes } from "react-router-dom"
+import Home from "./pages/Home"
+import Cart from "./pages/cart/Cart"
 
-function App(): ReactElement {
+
+function App() {
     return (
-        <MyContextApi>
-            <div className="container" >
-                <A />
-            </div>
-        </MyContextApi>
+        <div>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/cart" element={<Cart/>}/>
+            </Routes>
+        </div>
     )
 }
 

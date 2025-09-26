@@ -1,0 +1,28 @@
+.special-service{
+    padding: 60px 0;
+}
+.special-service .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 29px;
+}
+.s-text-side h1{
+    font-size: 60px;
+}
+.s-text-side p{
+    font-size: 32px;
+    span{
+        opacity: 50%;
+        margin-right: 10px;
+    }
+}
+.s-img-side{
+    position: relative;
+}
+.s-img-side .f-delivery{
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}

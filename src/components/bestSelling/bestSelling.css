@@ -1,0 +1,70 @@
+.best-selling {
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background: #F7F7F7;
+}
+
+.best-selling .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 270px);
+    grid-gap: 30px;
+}
+
+.small-cards {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: #fff;
+    padding: 10px;
+    height: 139px;
+}
+
+.small-card-img {
+    width: 111px;
+    height: 119px;
+}
+
+.small-cards .small-cards-text {
+    display: flex;
+    flex-direction: column;
+    height: 119px;
+    gap: 8px;
+
+    p {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        width: 80px;
+    }
+
+    button {
+        width: 110px;
+        height: 45px;
+    }
+}
+
+.line-through {
+    opacity: 50%;
+    text-decoration: line-through;
+    margin-right: 8px;
+}
+
+.exact-price {
+    color: rgba(226, 26, 67, 1);
+}
+
+.filter-button {
+    border: none;
+    background: none;
+    transition: 0.5s;
+}
+
+.filter-button:hover {
+    color: rgba(226, 26, 67, 1);
+}

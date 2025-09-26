@@ -1,0 +1,16 @@
+.online-shop {
+    padding: 60px 0;
+}
+
+.online-shop .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.online-shop-text{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}

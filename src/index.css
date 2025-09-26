@@ -1,0 +1,21 @@
+@import url("components/Header/header.css");
+@import url("components/main/main.css");
+@import url("components/products/products.css");
+@import url("components/specialService/specialService.css");
+@import url("components/bestProducts/bestProducts.css");
+@import url("components/delivery/delivery.css");
+@import url("components/bestSelling/bestSelling.css");
+@import url("components/onlineShop/onlineShop.css");
+@import url("components/footer/footer.css");
+@import url("pages/cart/cart.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}

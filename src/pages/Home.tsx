@@ -1,38 +1,26 @@
-import { useState } from "react"
-import SelectBox from "../components/SelectBox"
-import usePost from "../hooks/usePost"
-import useUsers from "../hooks/useUsers"
-import { useNavigate } from "react-router-dom"
-import { Post } from "../types"
-import { type ReactElement } from "react"
+import BestProducts from "../components/bestProducts/BestProducts"
+import BestSelling from "../components/bestSelling/BestSelling"
+import Delivery from "../components/delivery/Delivery"
+import Footer from "../components/footer/Footer"
+import Header from "../components/header/Header"
+import Main from "../components/main/Main"
+import OnlineShop from "../components/onlineShop/OnlineShop"
+import Products from "../components/products/Products"
+import SpecialService from "../components/specialService/SpecialService"
 
-function Home(): ReactElement {
-    const [selectedUser, setSelectedUser] = useState<number>(0)
-    const { posts, isLoading } = usePost(selectedUser)
-    const { users } = useUsers()
-    const navigate = useNavigate();
 
-    if (isLoading) {
-        return <div>Loading...</div>
-    }
-
+function Home() {
     return (
         <div>
-            <h1>Post</h1>
-            <SelectBox selectedUser={selectedUser} setSelectedUser={setSelectedUser} users={users} />
-            <div className="row">
-                {posts.map((post: Post) => (
-                    <div className="col-3 mb-3" key={post.id}>
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">{post.title}</h5>
-                                <p className="card-text">{post.body}</p>
-                                <button onClick={() => navigate(`/posts/${post.id}/comments`)}>comments</button>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
+            <Header />
+            <Main/>
+            <Products/>
+            <SpecialService/>
+            <BestProducts/>
+            <Delivery/>
+            <BestSelling/>
+            <OnlineShop/>
+            <Footer/>
         </div>
     )
 }

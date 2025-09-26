@@ -1,0 +1,101 @@
+/* Container */
+.slider-container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* ✅ fixes horizontal scroll */
+}
+
+/* Slick dots customization */
+.slick-dots {
+    bottom: 15px;
+}
+
+.slick-dots li button:before {
+    font-size: 12px;
+    color: #ccc;
+    opacity: 1;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #ff6600;
+    font-size: 14px;
+}
+
+/* Custom Arrows */
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    border: rgba(226, 26, 67, 1) solid 1px;
+    color: rgba(226, 26, 67, 1);
+    cursor: pointer;
+    z-index: 20;
+    user-select: none;
+    transition: 0.3s;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-arrow.prev {
+    left: 15px;
+}
+
+.custom-arrow.next {
+    right: 15px;
+}
+
+.custom-arrow:hover {
+    background: rgba(226, 26, 67, 1);
+    color: #fff;
+}
+
+/* Slide content */
+main .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-text {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 600px;
+}
+
+.main-text h1 {
+    font-size: 60px;
+    line-height: 1.2;
+}
+
+.main-text p {
+    font-size: 16px;
+    color: #444;
+}
+
+.main-buttons {
+    display: flex;
+    gap: 25px;
+}
+
+.main-button {
+    width: 130px;
+    height: 50px;
+    border: rgba(226, 26, 67, 1) solid 1px;
+    color: rgba(226, 26, 67, 1);
+    background: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.main-button:hover {
+    background: rgba(226, 26, 67, 1);
+    color: #fff;
+}
